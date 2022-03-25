@@ -1,45 +1,30 @@
 package br.com.dio.desafio.dominio;
 
-import java.time.LocalDate;
+public class Curso extends Conteudo{
+    private int cargaHoraria;
 
-public class Curso {
-   private String titulo;
-   private String descricao;
-   private int cargaHorario;
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO * cargaHoraria;
+    }
 
     public Curso() {
     }
 
-    public String getTitulo() {
-        return titulo;
+    public int getCargaHoraria() {
+        return cargaHoraria;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public int getCargaHorario() {
-        return cargaHorario;
-    }
-
-    public void setCargaHorario(int cargaHorario) {
-        this.cargaHorario = cargaHorario;
+    public void setCargaHoraria(int cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
     }
 
     @Override
     public String toString() {
         return "Curso{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", cargaHorario=" + cargaHorario +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
+                ", cargaHorario=" + cargaHoraria +
                 '}';
     }
 }
